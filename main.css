@@ -229,8 +229,8 @@ section[aria-label="Welcome title"] a[role="button"]:focus {
 
 aside[aria-hidden="true"] {
   display: flex;
-  justify-content: center;   /* centers the paragraph horizontally */
-  margin-block-start: 1.25rem; /* space below welcome section */
+  justify-content: center;
+  margin-block-start: 1.25rem;
 }
 aside[aria-hidden="true"] p {
   font-size: 0.75rem;
@@ -389,6 +389,464 @@ aside {
 
 a {
     color: var(--button-text);
+}
+
+/* player card styles */
+section[aria-label="player-card"] {
+  max-width: 60rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--foreground);
+  border: 4px solid var(--primary-text);
+  box-shadow: 0 0 0 2px var(--background),
+              0 8px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* profile section with picture and name */
+section[aria-label="player-card"] > figure {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-text);
+}
+
+section[aria-label="player-card"] picture {
+  flex-shrink: 0;
+  border: 3px solid var(--primary-text);
+  background-color: var(--background);
+  padding: 0.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+section[aria-label="player-card"] picture img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  image-rendering: pixelated;
+}
+
+section[aria-label="player-card"] figcaption {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section[aria-label="player-card"] figcaption hgroup {
+  margin: 0;
+}
+
+section[aria-label="player-card"] figcaption h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary-text);
+  line-height: 1.1;
+}
+
+section[aria-label="player-card"] figcaption p {
+  margin: 0.25rem 0;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+section[aria-label="player-card"] figcaption p:first-of-type {
+  color: var(--secondary-text);
+  font-size: 1em;
+}
+
+section[aria-label="player-card"] figcaption p:last-of-type {
+  color: var(--tertiary-text);
+  opacity: 0.9;
+}
+
+/* about me section */
+section[aria-labelledby="about-me-blurb"] {
+  padding: 1.25rem;
+  background-color: var(--background);
+  border: 2px solid var(--tertiary-text);
+}
+
+section[aria-labelledby="about-me-blurb"] h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--tertiary-text);
+  border-bottom: 2px solid var(--tertiary-text);
+  padding-bottom: 0.5rem;
+}
+
+section[aria-labelledby="about-me-blurb"] p {
+  margin: 0 0 0.75rem 0;
+  line-height: 1.6;
+  color: CanvasText;
+}
+
+section[aria-labelledby="about-me-blurb"] p:last-child {
+  margin-bottom: 0;
+}
+
+/* responsive adjustments */
+@media (max-width: 600px) {
+  section[aria-label="player-card"] > figure {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* skill tree styles */
+section[aria-labelledby="skill-tree-title"] {
+  max-width: 60rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--foreground);
+  border: 4px solid var(--primary-text);
+  box-shadow: 0 0 0 2px var(--background),
+              0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+section[aria-labelledby="skill-tree-title"] > h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary-text);
+}
+
+/* tab buttons container */
+div[role="tablist"] {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* individual tab buttons */
+button[role="tab"] {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--background);
+  border: 2px solid var(--primary-text);
+  color: CanvasText;
+  font-family: 'PixelFont', monospace;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+button[role="tab"]:hover {
+  background-color: var(--primary-text);
+  color: var(--foreground);
+  transform: translateY(-2px);
+}
+
+button[role="tab"]:focus-visible {
+  outline: 2px solid var(--secondary-text);
+  outline-offset: 2px;
+}
+
+/* selected/active tab */
+button[role="tab"][aria-selected="true"] {
+  background-color: var(--primary-text);
+  color: var(--foreground);
+  border-color: var(--primary-text);
+}
+
+/* skill panels */
+section[role="tabpanel"] {
+  padding: 1.5rem;
+  background-color: var(--background);
+  border: 2px solid var(--primary-text);
+}
+
+section[role="tabpanel"] > h3 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+section[role="tabpanel"] ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+section[role="tabpanel"] li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: var(--foreground);
+  border: 2px solid rgba(117, 71, 209, 0.3);
+  transition: border-color 0.2s ease;
+}
+
+section[role="tabpanel"] li:hover {
+  border-color: var(--primary-text);
+}
+
+/* skill name label */
+.skill-name {
+  font-size: 1em;
+  font-weight: bold;
+  color: CanvasText;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* skill progress bar container */
+.skill-bar {
+  width: 100%;
+  height: 1.5rem;
+  border: 2px solid #c34cff;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+/* skill progress bar fill */
+.skill-fill {
+  height: 100%;
+  background-color: #c34cff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: width 0.3s ease;
+}
+
+/* responsive adjustments for skill tree */
+@media (max-width: 600px) {
+  section[aria-labelledby="skill-tree-title"] {
+    padding: 1rem;
+  }
+
+  button[role="tab"] {
+    padding: 0.6rem 1rem;
+    font-size: 0.75em;
+  }
+
+  section[role="tabpanel"] {
+    padding: 1rem;
+  }
+
+  section[role="tabpanel"] li {
+    padding: 0.75rem;
+  }
+}
+
+/* education section */
+section[aria-labelledby="education-title"] {
+  max-width: 60rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--foreground);
+  border: 4px solid var(--primary-text);
+  box-shadow: 0 0 0 2px var(--background),
+              0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+section[aria-labelledby="education-title"] > h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary-text);
+}
+
+section[aria-labelledby="education-title"] > article {
+  padding: 1.5rem;
+  background-color: var(--background);
+  border: 3px solid var(--secondary-text);
+}
+
+section[aria-labelledby="education-title"] h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffff00;
+}
+
+section[aria-labelledby="education-title"] > article > p {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+section[aria-labelledby="education-title"] strong {
+  color: var(--secondary-text);
+  font-size: 1.1em;
+}
+
+section[aria-labelledby="education-title"] em,
+section[aria-labelledby="education-title"] b,
+section[aria-labelledby="education-title"] time {
+  color: CanvasText;
+}
+
+/* relevant coursework subsection */
+section[aria-labelledby="education-title"] section[aria-labelledby="relevant-coursework-title"] {
+  margin-top: 1.5rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+section[aria-labelledby="education-title"] h4 {
+  margin: 0 0 1rem 0;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary-text);
+}
+
+section[aria-labelledby="education-title"] section[aria-labelledby="relevant-coursework-title"] ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 2rem;
+}
+
+section[aria-labelledby="education-title"] section[aria-labelledby="relevant-coursework-title"] li {
+  color: CanvasText;
+  padding-left: 1rem;
+  position: relative;
+}
+
+section[aria-labelledby="education-title"] section[aria-labelledby="relevant-coursework-title"] li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--secondary-text);
+}
+
+/* hide the degree progress card for now - doesn't match the design */
+kc-stat-card {
+  display: none;
+}
+
+/* experience section */
+section[aria-labelledby="experience-title"] {
+  max-width: 60rem;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--foreground);
+  border: 4px solid var(--primary-text);
+  box-shadow: 0 0 0 2px var(--background),
+              0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+section[aria-labelledby="experience-title"] > h2 {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary-text);
+}
+
+section[aria-labelledby="experience-title"] > ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+section[aria-labelledby="experience-title"] article {
+  padding: 1.5rem;
+  background-color: var(--background);
+  border: 3px solid var(--secondary-text);
+}
+
+section[aria-labelledby="experience-title"] h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffff00;
+}
+
+section[aria-labelledby="experience-title"] article > p:first-of-type {
+  margin: 0 0 1rem 0;
+  color: var(--secondary-text);
+  font-size: 1em;
+}
+
+section[aria-labelledby="experience-title"] article > ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.5rem;
+  list-style: none;
+}
+
+section[aria-labelledby="experience-title"] article > ul > li {
+  color: CanvasText;
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+section[aria-labelledby="experience-title"] article > ul > li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: CanvasText;
+}
+
+/* tags styling */
+.tags {
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  padding: 0.4rem 0.8rem;
+  border: 2px solid var(--primary-text);
+  background-color: transparent;
+  color: CanvasText;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'PixelFont', monospace;
+}
+
+/* responsive adjustments for education and experience */
+@media (max-width: 600px) {
+  section[aria-labelledby="education-title"],
+  section[aria-labelledby="experience-title"] {
+    padding: 1rem;
+  }
+
+  section[aria-labelledby="education-title"] > article,
+  section[aria-labelledby="experience-title"] article {
+    padding: 1rem;
+  }
+
+  section[aria-labelledby="education-title"] section[aria-labelledby="relevant-coursework-title"] ul {
+    grid-template-columns: 1fr;
+  }
 }
 
 ::selection {

@@ -83,9 +83,23 @@
             <section aria-label="player-card">
                 <figure>
                     <picture>
-                        <source srcset="https://placehold.co/200x150.webp" type="image/webp">
-                        <source srcset="https://placehold.co/200x150.jpg"  type="image/jpeg">
-                        <img src="https://placehold.co/100x100?text=+" alt="Portrait of Kevin Cohen">
+                        <source
+                            srcset="assets/images/profile_picture-120w.webp 120w,
+                                    assets/images/profile_picture-240w.webp 240w"
+                            sizes="(max-width: 600px) 120px, 120px"
+                            type="image/webp">
+
+                        <source
+                            srcset="assets/images/profile_picture-120w.jpeg 120w,
+                                    assets/images/profile_picture-240w.jpeg 240w"
+                            sizes="(max-width: 600px) 120px, 120px"
+                            type="image/jpeg">
+
+                        <img
+                            src="assets/images/profile_picture-120w.jpeg"
+                            alt="Portrait of Kevin Cohen, Full Stack Developer"
+                            width="120"
+                            height="120">
                     </picture>
                     <figcaption>
                         <hgroup>
@@ -95,16 +109,6 @@
                         </hgroup>
                     </figcaption>
                 </figure>
-                <section aria-label="player-stats">
-                    <dl> <!-- I'll think of more meaningful content -->
-                        <dt>Level</dt>
-                        <dd>Graduate</dd>
-                        <dt>EXP</dt>
-                        <dd>9,999</dd>
-                        <dt>HP</dt>
-                        <dd>100/100</dd>
-                    </dl>
-                </section>
                 <section aria-labelledby="about-me-blurb">
                     <h3 id="about-me-blurb">About Me</h3> <!-- h3 makes more sense than h2, but h2 is being skipped...? -->
                     <!-- Two <p> tags make sense here? -->
@@ -138,20 +142,28 @@
                     <h3 id="tab-languages">Languages</h3>
                     <ul>
                         <li>
-                            <label for="python-meter">Python</label>
-                            <meter id="python-meter" min="0" max="100" value="75">75/100</meter>
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Python skill level: 75%">
+                                <div class="skill-fill" style="width: 75%;"></div>
+                            </div>
                         </li>
                         <li>
-                            <label for="java-meter">Java</label>
-                            <meter id="java-meter" min="0" max="100" value="75">75/100</meter>
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Java skill level: 75%">
+                                <div class="skill-fill" style="width: 75%;"></div>
+                            </div>
                         </li>
                         <li>
-                            <label for="javascript-meter">JavaScript</label>
-                            <meter id="javascript-meter" min="0" max="100" value="50">50/100</meter>
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="JavaScript skill level: 50%">
+                                <div class="skill-fill" style="width: 50%;"></div>
+                            </div>
                         </li>
                         <li>
-                            <label for="typescript-meter">TypeScript</label>
-                            <meter id="typescript-meter" min="0" max="100" value="25">25/100</meter>
+                            <span class="skill-name">TypeScript</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="TypeScript skill level: 25%">
+                                <div class="skill-fill" style="width: 25%;"></div>
+                            </div>
                         </li>
                     </ul>
                 </section>
@@ -160,20 +172,28 @@
                     <h3 id="tab-webdev">Web Dev</h3>
                     <ul>
                         <li>
-                            <label for="react-native-meter">React Native</label>
-                            <meter id="react-native-meter" min="0" max="100" value="75">75/100</meter>
+                            <span class="skill-name">React Native</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="React Native skill level: 75%">
+                                <div class="skill-fill" style="width: 75%;"></div>
+                            </div>
                         </li>
                         <li>
-                            <label for="html-meter">HTML</label>
-                            <meter id="html-meter" min="0" max="100" value="75">75/100</meter>
+                            <span class="skill-name">HTML</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="HTML skill level: 75%">
+                                <div class="skill-fill" style="width: 75%;"></div>
+                            </div>
                         </li>
                         <li>
-                            <label for="css-meter">CSS</label>
-                            <meter id="css-meter" min="0" max="100" value="50">50/100</meter>
+                            <span class="skill-name">CSS</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="CSS skill level: 50%">
+                                <div class="skill-fill" style="width: 50%;"></div>
+                            </div>
                         </li>
                         <li>
-                            <label for="bootstrap-meter">Bootstrap</label>
-                            <meter id="bootstrap-meter" min="0" max="100" value="25">25/100</meter>
+                            <span class="skill-name">Bootstrap</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="Bootstrap skill level: 25%">
+                                <div class="skill-fill" style="width: 25%;"></div>
+                            </div>
                         </li>
                     </ul>
                 </section>
@@ -182,20 +202,28 @@
                     <h3 id="tab-dev-process">Dev Process</h3>
                     <ul>
                         <li>
-                            <label for="github-meter">Git/GitHub</label>
-                            <meter id="github-meter" min="0" max="100" value="75">75/100</meter>
+                            <span class="skill-name">Git/GitHub</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Git/GitHub skill level: 75%">
+                                <div class="skill-fill" style="width: 75%;"></div>
+                            </div>
                         </li>
                         <li>
-                            <label for="agile-meter">Agile/Scrum</label>
-                            <meter id="agile-meter" min="0" max="100" value="75">75/100</meter>
+                            <span class="skill-name">Agile/Scrum</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Agile/Scrum skill level: 75%">
+                                <div class="skill-fill" style="width: 75%;"></div>
+                            </div>
                         </li>
                         <li>
-                            <label for="testing-meter">Testing/Debugging</label>
-                            <meter id="testing-meter" min="0" max="100" value="50">50/100</meter>
+                            <span class="skill-name">Testing/Debugging</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" aria-label="Testing/Debugging skill level: 50%">
+                                <div class="skill-fill" style="width: 50%;"></div>
+                            </div>
                         </li>
                         <li>
-                            <label for="cicd-meter">CI/CD</label>
-                            <meter id="cicd-meter" min="0" max="100" value="25">25/100</meter>
+                            <span class="skill-name">CI/CD</span>
+                            <div class="skill-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" aria-label="CI/CD skill level: 25%">
+                                <div class="skill-fill" style="width: 25%;"></div>
+                            </div>
                         </li>
                     </ul>
                 </section>
@@ -248,7 +276,7 @@
                                     <li>Collaborated cross-functionally in Agile sprints.</li>
                                     <li>Implemented automated tests, improving coverage.</li>
                                 </ul>
-                                <p><small>Tags: React, Node.js, PostgreSQL</small></p>
+                                <p class="tags"><span>React</span> <span>Node.js</span> <span>PostgreSQL</span></p>
                             </article>
                         </li>
 
@@ -263,7 +291,7 @@
                                     <li>Built data processing pipelines to automate workflows.</li>
                                     <li>Presented findings at department symposium.</li>
                                 </ul>
-                                <p><small>Tags: Python, Pandas, Data Analysis</small></p>
+                                <p class="tags"><span>Python</span> <span>Pandas</span> <span>Data Analysis</span></p>
                             </article>
                         </li>
 
@@ -278,7 +306,7 @@
                                     <li>Graded assignments and provided detailed feedback.</li>
                                     <li>Led weekly labs on data structures and algorithms.</li>
                                 </ul>
-                                <p><small>Tags: Java, Algorithms, Mentoring</small></p>
+                                <p class="tags"><span>Java</span> <span>Algorithms</span> <span>Mentoring</span></p>
                             </article>
                         </li>
                     </ol>
