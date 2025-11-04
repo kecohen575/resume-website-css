@@ -9,6 +9,15 @@
     --button-text: light-dark(#263759, #ccffcc);
 }
 
+/* :root {
+  &:has(input[name="color-scheme"][value="light"]:checked) {
+    color-scheme: light;
+  }
+  &:has(input[name="color-scheme"][value="dark"]:checked) {
+    color-scheme: dark;
+  }
+} */
+
 /* where should this go? */
 @font-face {
   font-family: 'PixelFont';
@@ -47,7 +56,56 @@ h1 { font-size: 1.8em;  line-height: 1.15; letter-spacing: 0.06em; } */
 } */
 
 /* TODO: neutralize once you start working on spacing */
-/* * { margin: 0; padding: 0; } */
+* { margin: 0; padding: 0; }
+
+header {
+    background-color: var(--foreground);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  justify-content: center;
+}
+.brand h1 {
+  margin: 0;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.brand p {
+  margin: 0.2em 0 0;
+  opacity: 0.85;
+}
+
+nav { 
+    margin-left: auto;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.35rem;
+  border: 2px solid transparent;
+}
+nav a[aria-current="page"] {
+  border-color: currentColor;
+}
+
 
 h1, h2, h3, a[role='button'], small { text-transform: uppercase; }
 

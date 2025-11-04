@@ -13,19 +13,11 @@
         <title>Kevin's Resume Site</title>
         <link rel="icon" href="assets/cv-favicon-16.png" sizes="16x16" type="image/png">
         <link rel="icon" href="assets/cv-favicon-32.png" sizes="32x32" type="image/png">
-        <style>
-            header, main, footer {
-                border: 2px solid black;
-            }
-            section, article, #uncertain {
-                border: 1px solid black;
-            }
-        </style>
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <header>
-            <hgroup>
+            <hgroup class="brand">
                 <h2>Kevin Cohen</h2> <!-- Should this be <h1>? -->
                 <p>> Player One</p>
             </hgroup>
@@ -33,11 +25,13 @@
             <nav> <!-- Is aria-label="Primary" or "Main" necessary here? Im worried it will imply theres more than one nav -->
                 <ul> <!-- Does an unoredered list make sense semantically? I feel it will make CSS easier later -->
                     <li><a href="/index.html" aria-current="page">Home</a></li>
-                    <li><a href="/resume.html">About Me</a></li>
+                    <li><a href="/resume.html">About</a></li>
                     <li><a href="/projects.html">Projects</a></li>
                     <li><a href="/blog.html">Blog</a></li>
                 </ul>
             </nav>
+            <!-- <label><input name="color-scheme" type="radio" value="light"> Forced Light</label>
+            <label><input name="color-scheme" type="radio" value="dark"> Forced Dark</label> -->
         </header>
         <main>
             <section aria-label="Welcome title"> <!-- using label instead of labelledby since "Press Start" not descriptive-->
