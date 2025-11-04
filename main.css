@@ -12,9 +12,6 @@
 }
 
 :root:has(input[name="color-scheme"]:checked) {
-    color-scheme: dark;
-}
-:root:has(input[name="color-scheme"]:not(:checked)) {
     color-scheme: light;
 }
 
@@ -148,22 +145,22 @@ nav a[aria-current="page"] {
   height: 1.25rem;
   background-color: var(--primary-text);
   transition: transform 0.3s ease, background-color 0.3s ease;
-  /* sun icon for light mode */
+  /* moon icon for dark mode */
   &::before {
-    content: '☀';
+    content: '☾';
     font-size: 0.75rem;
     color: var(--foreground);
   }
 }
-/* checked state - dark mode */
+/* checked state - light mode */
 .theme-toggle input:checked ~ .toggle-track {
   background-color: var(--foreground);
 }
 .theme-toggle input:checked ~ .toggle-track .toggle-thumb {
   transform: translateX(1.75rem);
-  /* moon icon for dark mode */
+  /* sun icon for light mode */
   &::before {
-    content: '☾';
+    content: '☀';
   }
 }
 /* hover state */
