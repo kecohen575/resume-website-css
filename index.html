@@ -21,31 +21,27 @@
                 border: 1px solid black;
             }
         </style>
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <header>
             <hgroup>
                 <h2>Kevin Cohen</h2> <!-- Should this be <h1>? -->
-                <p>
-                    <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" focusable="false">
-                        <polygon points="4,3 14,9 4,15" fill="#8A2BE2" stroke="#5B1A9E" stroke-width="1"></polygon>
-                    </svg>
-                    Player One
-                </p>
+                <p>> Player One</p>
             </hgroup>
 
             <nav> <!-- Is aria-label="Primary" or "Main" necessary here? Im worried it will imply theres more than one nav -->
                 <ul> <!-- Does an unoredered list make sense semantically? I feel it will make CSS easier later -->
-                    <li><a href="/index.html" aria-current="page">HOME</a></li>
-                    <li><a href="/resume.html">ABOUT ME</a></li>
-                    <li><a href="/projects.html">PROJECTS</a></li>
-                    <li><a href="/blog.html">BLOG</a></li>
+                    <li><a href="/index.html" aria-current="page">Home</a></li>
+                    <li><a href="/resume.html">About Me</a></li>
+                    <li><a href="/projects.html">Projects</a></li>
+                    <li><a href="/blog.html">Blog</a></li>
                 </ul>
             </nav>
         </header>
         <main>
             <section aria-label="Welcome title"> <!-- using label instead of labelledby since "Press Start" not descriptive-->
-                <h1>Press Start</h1>
+                <h1 class="!blinking">Press Start</h1>
                 <p>Welcome to the digital realm of a passionate developer. Choose your path to begin the adventure!</p> <!-- Not using hgroup since not THAT related to each other -->
                 <p> <!-- is <p> right here? <ul> or <menu> dont fit since they're nav buttons... -->
                     <a href="/resume.html" role="button">Start Game →</a> <!-- is using role="button" cool here or inconsitent for accessibility users?-->
@@ -104,7 +100,7 @@
             <!-- This would be where the "Achievements" section goes, but after consideration I don't think I want to include it-->
 
             <aside aria-hidden="true">
-                <p>&blacktriangleright; INSERT COIN TO CONTINUE &blacktriangleleft;</p>
+                <p class="blinking">&blacktriangleright; INSERT COIN TO CONTINUE &blacktriangleleft;</p>
             </aside>
         </main>
         <footer>
@@ -117,7 +113,7 @@
                         <li><a href="https://www.linkedin.com/in/kecohen26/">LinkedIn</a></li>
                     </ul>
                 </address>
-                <small>&copy; KEVIN COHEN<br>Press Start to continue</small> <!-- <small> makes more sense than <p>? -->
+                <small>&copy; Kevin Cohen<br>Press Start to continue</small> <!-- <small> makes more sense than <p>? -->
             </section>
             <section aria-labelledby="contact-me-title"> <!-- I dont actually want a form on my resume site, only adding it here for hw requirement... -->
                 <h2 id="contact-me-title">Contact Me</h2>

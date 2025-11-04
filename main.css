@@ -1,0 +1,87 @@
+:root {
+    /* color palette */
+    color-scheme: light dark;
+    --background: light-dark(white, rgb(16, 16, 24));
+    --foreground: light-dark(white, #171726);
+    --primary-text: light-dark(#7547d1, #c34cff);
+    --secondary-text: light-dark(#40aabf, #00ffff);
+    --tertiary-text: light-dark(green, #66cc66);
+    --button-text: light-dark(#263759, #ccffcc);
+}
+
+/* where should this go? */
+@font-face {
+  font-family: 'PixelFont';
+  src: url('assets/fonts/PressStart2P.woff2') format('woff2'),
+       url('assets/fonts/PressStart2P.ttf') format('truetype'); /* does this work the same as <picture>? will it only load woff2 unless not supported?
+  font-display: swap; /* is this the right choice? with auto/swap im noticing the swap when saving the file, but not when refreshing the page */
+}
+
+body {
+    background-color: var(--background, Canvas);
+    font-family: 'PixelFont', monospace, system-ui;
+    font-synthesis: none; /* how would I allow fallback fonts to still synthesize? */
+    font-size: 0.8rem;
+    line-height: 1.65;
+    letter-spacing: 0.04em;
+    color: CanvasText; /* does this eliminate the need for fallbacks in later var usage? */
+    /* image-rendering: pixelated; TODO: evaluate usage, maybe will be good for profile pic */
+}
+
+/* tablet */
+/* @media (min-width: 600px){
+  body { font-size: 0.85rem; line-height: 1.6; }
+} */
+
+/* desktop */
+/* @media (min-width: 1024px){
+  body { font-size: 0.9rem; line-height: 1.55; }
+} */
+
+/* h3 { font-size: 1.15em; line-height: 1.25; letter-spacing: 0.05em; }
+h2 { font-size: 1.4em;  line-height: 1.2;  letter-spacing: 0.05em; }
+h1 { font-size: 1.8em;  line-height: 1.15; letter-spacing: 0.06em; } */
+
+/* header, section {
+    background-color: var(--foreground)
+} */
+
+/* TODO: neutralize once you start working on spacing */
+/* * { margin: 0; padding: 0; } */
+
+h1, h2, h3, a[role='button'], small { text-transform: uppercase; }
+
+h1, h2 {
+    color: var(--primary-text);
+    & + p { /* from my understanding modern browsers have nesting, but still not the safest? */
+        color: var(--secondary-text);
+    }
+}
+
+h3 + p, small {
+    color: var(--tertiary-text);
+}
+
+aside {
+    color: var(--secondary-text)
+}
+
+a {
+    color: var(--button-text);
+}
+
+::selection {
+    background-color: var(--primary-text);
+    color: white;
+}
+
+
+/* TODO: test this preference works */
+@media (prefers-reduced-motion: no-preference) {
+    .blinking { /* should this be named blink instead? */
+        animation: blink 1.4s step-start infinite;
+    }
+}
+@keyframes blink {
+    50% { visibility: hidden; }
+}

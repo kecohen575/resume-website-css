@@ -1,3 +1,5 @@
+PART 1: HTML
+
 Questions/Curiosities Remainiing:
 - File structure?
 - <meta> description on one line for SEO or broken for 
@@ -24,3 +26,16 @@ Concerns:
 Ideas:
 - 2P mode using windows mechanic I experimented with? What would it do tho...
 - I want to add a 404 not found page similar to GitHub's
+- Use meta media=print to have site print out typical resume format
+- Add a View Levels nav button to the bottom of About Me page
+
+
+
+
+PART 2: CSS
+
+- should the highlight persist on blinking text, or also blink?
+- i def want the "Insert Coin" line to blink, but maybe the h1 PRESS START blinking would be obnoxious
+  - maybe i make it toggle-able
+- im noticing some page jankiness coming from the images loading in...
+- also some flash of unstyled text, how to address?
